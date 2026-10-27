@@ -1,0 +1,48 @@
+.btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.92rem; line-height: 1.2; font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.25s var(--ease), background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.btn:disabled { opacity: 0.65; cursor: progress; transform: none; }
+.btn--sm { padding: 11px 17px; font-size: 0.86rem; }
+.btn--lg { padding: 16px 26px; font-size: 0.98rem; }
+
+.btn__arrow { transition: transform 0.25s var(--ease); flex: 0 0 auto; }
+.btn:hover .btn__arrow { transform: translate(2px, -2px); }
+
+.btn--primary { color: var(--white); background: var(--teal); box-shadow: 0 8px 22px rgba(53, 107, 104, 0.22); }
+.btn--primary:hover { background: var(--teal-dark); box-shadow: 0 12px 30px rgba(53, 107, 104, 0.3); }
+.btn--dark { color: var(--white); background: var(--ink); }
+.btn--dark:hover { background: #1a282d; box-shadow: 0 12px 28px rgba(37, 54, 61, 0.24); }
+.btn--outline { color: var(--ink); background: rgba(255, 255, 255, 0.6); border-color: #c9d5d0; backdrop-filter: blur(6px); }
+.btn--outline:hover { background: var(--white); border-color: var(--teal); }
+.btn--ghost-light { color: var(--white); background: transparent; border-color: rgba(255, 255, 255, 0.38); }
+.btn--ghost-light:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.7); }
+
+/* Shimmer sweep */
+.btn--shine::after {
+  content: '';
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, 0.28) 45%, rgba(255, 255, 255, 0.05) 55%, transparent 70%);
+  transform: translateX(-120%);
+  animation: btn-shine 3.6s ease-in-out infinite;
+}
+.btn--shine .btn__label, .btn--shine .btn__arrow { position: relative; z-index: 1; }
+@keyframes btn-shine {
+  0%, 55% { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
+}
+
+@media (max-width: 650px) {
+  .btn { white-space: normal; text-align: center; }
+}

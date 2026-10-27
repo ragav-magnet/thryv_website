@@ -1,0 +1,21 @@
+.section-heading { max-width: 820px; margin-bottom: 48px; position: relative; z-index: 1; }
+.section-heading .lead { margin-bottom: 0; }
+.section-heading--rule::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: min(100%, 440px);
+  margin-top: 30px;
+  background: linear-gradient(90deg, var(--teal), var(--line) 64%, transparent);
+  transform-origin: left;
+  animation: rule-grow 1.2s var(--ease) both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+.section-heading--light .h2 { color: var(--white); }
+.section-heading--light .lead { color: #dce4e1; }
+
+@keyframes rule-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}

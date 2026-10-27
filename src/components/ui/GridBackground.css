@@ -1,0 +1,35 @@
+.bg-fx { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+
+.bg-fx__pattern { position: absolute; inset: 0; }
+.bg-fx__pattern--grid {
+  background-image:
+    linear-gradient(to right, rgba(53, 107, 104, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(53, 107, 104, 0.07) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 75% 60% at 60% 30%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 75% 60% at 60% 30%, #000 30%, transparent 75%);
+}
+.bg-fx__pattern--dots {
+  background-image: radial-gradient(rgba(53, 107, 104, 0.18) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 80% 20%, #000 15%, transparent 70%);
+  mask-image: radial-gradient(ellipse 70% 70% at 80% 20%, #000 15%, transparent 70%);
+}
+.bg-fx--dark .bg-fx__pattern--grid {
+  background-image:
+    linear-gradient(to right, rgba(223, 234, 226, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(223, 234, 226, 0.06) 1px, transparent 1px);
+}
+.bg-fx--dark .bg-fx__pattern--dots { background-image: radial-gradient(rgba(223, 234, 226, 0.14) 1px, transparent 1px); }
+
+.bg-fx__orb { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.55; animation: orb-drift 18s ease-in-out infinite alternate; }
+.bg-fx__orb--a { width: 420px; height: 420px; right: -80px; top: -120px; background: var(--mist); }
+.bg-fx__orb--b { width: 340px; height: 340px; left: -120px; bottom: -120px; background: var(--clay); animation-delay: -6s; opacity: 0.45; }
+.bg-fx__orb--c { width: 280px; height: 280px; left: 45%; top: 40%; background: var(--sage); animation-delay: -12s; opacity: 0.4; }
+.bg-fx--dark .bg-fx__orb { opacity: 0.14; }
+
+@keyframes orb-drift {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, -30px) scale(1.08); }
+  100% { transform: translate(-30px, 25px) scale(0.95); }
+}

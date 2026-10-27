@@ -1,0 +1,35 @@
+.approach { background: var(--white); border-bottom: 1px solid var(--line); }
+.approach__intro { display: grid; grid-template-columns: 1fr 0.8fr; gap: 52px; align-items: end; margin-bottom: 46px; }
+.approach__intro .lead { margin-bottom: 0; }
+.approach__promise {
+  position: relative;
+  padding: 28px 28px 26px 32px;
+  border-left: 2px solid var(--teal);
+  background: var(--chalk);
+  border-radius: 0 18px 18px 0;
+  color: #53635f; font-size: 1rem;
+}
+.approach__quote { position: absolute; top: -18px; right: 20px; font-size: 5rem; line-height: 1; color: var(--clay-strong); opacity: 0.45; font-family: Georgia, serif; }
+
+.approach__levels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.approach__cell { display: flex; }
+.level-card { width: 100%; padding: 26px 24px 30px; border-radius: 18px; border: 1px solid var(--line); }
+.level-card--mist { background: var(--mist); border-color: var(--mist-line); }
+.level-card--clay { background: var(--clay); border-color: var(--clay-line); }
+.level-card--sage { background: var(--sage); border-color: var(--sage-line); }
+.level-card__top { display: flex; align-items: center; justify-content: space-between; }
+.level-card__index { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 850; color: var(--teal); }
+.level-card__icon { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: rgba(255, 255, 255, 0.75); color: var(--teal); transition: transform 0.4s var(--ease); }
+.level-card:hover .level-card__icon { transform: rotate(14deg) scale(1.08); }
+.level-card h3 { margin: 18px 0 10px; font-size: 1.42rem; }
+.level-card p { color: var(--body); font-size: 0.94rem; margin: 0; }
+.level-card__bar { position: absolute; left: 24px; right: 24px; bottom: 14px; height: 3px; border-radius: 3px; background: rgba(255, 255, 255, 0.65); overflow: hidden; }
+.level-card__bar::after { content: ''; position: absolute; inset: 0; width: var(--fill); background: var(--teal); border-radius: 3px; opacity: 0.7; transform-origin: left; transform: scaleX(0.3); transition: transform 0.8s var(--ease); }
+.level-card:hover .level-card__bar::after { transform: scaleX(1); }
+
+.approach__line { margin-top: 30px; height: 1px; transform-origin: left; background: linear-gradient(90deg, var(--mist), var(--teal), var(--clay), var(--sage), transparent); }
+
+@media (max-width: 940px) {
+  .approach__intro { grid-template-columns: 1fr; gap: 24px; }
+  .approach__levels { grid-template-columns: 1fr; }
+}

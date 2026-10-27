@@ -1,0 +1,34 @@
+/* Design tokens — the original Thryv palette, plus a few derived tints. */
+:root {
+  --teal: #356b68;
+  --teal-dark: #2b5956;
+  --teal-soft: #bfd6d1;
+  --mist: #e4edf4;
+  --mist-line: #d4e1ea;
+  --clay: #f4dfd0;
+  --clay-line: #ecd2c1;
+  --clay-strong: #d9a987;
+  --sage: #dfeae2;
+  --sage-line: #d0ded4;
+  --sage-strong: #91af9b;
+  --sky-strong: #a8c4d7;
+  --sand: #d7c2a0;
+  --ink: #25363d;
+  --ink-deep: #1e3036;
+  --chalk: #f8f7f3;
+  --white: #ffffff;
+  --line: #d9e1dc;
+  --muted: #667570;
+  --body: #50615f;
+
+  --font: 'Inter', ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --max: 1180px;
+  --radius-sm: 14px;
+  --radius: 20px;
+  --radius-lg: 28px;
+  --shadow-sm: 0 4px 16px rgba(37, 54, 61, 0.06);
+  --shadow: 0 18px 54px rgba(37, 54, 61, 0.08);
+  --shadow-lg: 0 30px 80px rgba(37, 54, 61, 0.14);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --nav-h: 82px;
+}

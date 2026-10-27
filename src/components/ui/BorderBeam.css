@@ -1,0 +1,22 @@
+@property --beam-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.border-beam {
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  padding: var(--beam-width);
+  pointer-events: none;
+  background: conic-gradient(from var(--beam-angle), transparent 0deg, transparent 280deg, var(--beam-from) 320deg, var(--beam-to) 350deg, transparent 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: beam-spin var(--beam-duration) linear infinite;
+  z-index: 2;
+}
+
+@keyframes beam-spin {
+  to { --beam-angle: 360deg; }
+}

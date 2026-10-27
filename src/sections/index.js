@@ -1,0 +1,9 @@
+export { default as Hero } from './Hero/Hero';
+export { default as Questions } from './Questions/Questions';
+export { default as Offerings } from './Offerings/Offerings';
+export { default as DealHub } from './DealHub/DealHub';
+export { default as Approach } from './Approach/Approach';
+export { default as Productivity } from './Productivity/Productivity';
+export { default as QuoteBand } from './QuoteBand/QuoteBand';
+export { default as About } from './About/About';
+export { default as Contact } from './Contact/Contact';

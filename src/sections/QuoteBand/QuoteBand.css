@@ -1,0 +1,20 @@
+.quote-band { padding: 120px 0; background: var(--ink); color: var(--white); }
+.quote-band.spotlight-card:hover { transform: none; box-shadow: none; }
+.quote-band::before { background: radial-gradient(700px circle at var(--spot-x, 50%) var(--spot-y, 50%), var(--spot-color), transparent 60%) !important; }
+.quote-band__rings {
+  position: absolute; right: -70px; bottom: -210px; width: 420px; height: 420px; border-radius: 50%;
+  border: 1px solid rgba(223, 234, 226, 0.3);
+  box-shadow: 0 0 0 28px rgba(223, 234, 226, 0.03), 0 0 0 56px rgba(223, 234, 226, 0.025), 0 0 0 84px rgba(223, 234, 226, 0.02);
+  animation: rings-breathe 10s ease-in-out infinite;
+}
+.quote-band__inner { position: relative; z-index: 1; }
+.quote-band__title { max-width: 1000px; font-size: clamp(2.4rem, 5vw, 4.9rem); font-weight: 800; line-height: 1.04; letter-spacing: -0.05em; margin-bottom: 0; }
+.quote-band__support { max-width: 700px; margin: 28px 0 0; color: #dce4e1; font-size: 1.1rem; }
+.quote-band__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+
+@keyframes rings-breathe { 50% { transform: scale(1.06); } }
+
+@media (max-width: 650px) {
+  .quote-band { padding: 84px 0; }
+  .quote-band__actions .btn { flex: 1 1 100%; }
+}
