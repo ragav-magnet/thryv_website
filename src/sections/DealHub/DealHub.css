@@ -9,7 +9,7 @@
 .deal-hub__container { position: relative; z-index: 1; }
 
 .deal-hub__hero { display: grid; grid-template-columns: 1.2fr 0.75fr; gap: clamp(28px, 5vw, 70px); align-items: center; padding-bottom: 56px; border-bottom: 1px solid var(--line); }
-.deal-hub__title { font-size: clamp(2.5rem, 4.8vw, 4.4rem); max-width: 720px; margin: 0 0 22px; font-weight: 780; }
+.deal-hub__title { font-size: clamp(2.5rem, 4.8vw, 4.4rem); max-width: 720px; margin: 0 0 22px; font-weight: 600; }
 .deal-hub__lead { max-width: 760px; color: #53635f; font-size: 1.04rem; }
 .deal-hub__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 

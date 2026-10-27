@@ -8,7 +8,7 @@
   animation: rings-breathe 10s ease-in-out infinite;
 }
 .quote-band__inner { position: relative; z-index: 1; }
-.quote-band__title { max-width: 1000px; font-size: clamp(2.4rem, 5vw, 4.9rem); font-weight: 800; line-height: 1.04; letter-spacing: -0.05em; margin-bottom: 0; }
+.quote-band__title { max-width: 1000px; font-size: clamp(2.4rem, 5vw, 4.9rem); font-weight: 600; line-height: 1.04; letter-spacing: -0.05em; margin-bottom: 0; }
 .quote-band__support { max-width: 700px; margin: 28px 0 0; color: #dce4e1; font-size: 1.1rem; }
 .quote-band__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
 

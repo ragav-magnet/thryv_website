@@ -9,7 +9,7 @@
   border-radius: 0 18px 18px 0;
   color: #53635f; font-size: 1rem;
 }
-.approach__quote { position: absolute; top: -18px; right: 20px; font-size: 5rem; line-height: 1; color: var(--clay-strong); opacity: 0.45; font-family: Georgia, serif; }
+.approach__quote { position: absolute; top: -18px; right: 20px; font-size: 5rem; line-height: 1; color: var(--clay-strong); opacity: 0.45; }
 
 .approach__levels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .approach__cell { display: flex; }
