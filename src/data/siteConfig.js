@@ -7,7 +7,7 @@ export const siteConfig = {
     href: 'tel:+919986368486',
   },
   tagline: 'Think clearly · Act decisively · Build capability that lasts',
-  contactEndpoint: import.meta.env.VITE_CONTACT_ENDPOINT || '',
+  contactEndpoint: import.meta.env.VITE_CONTACT_ENDPOINT ?? (import.meta.env.PROD ? '/api/contact' : ''),
 };
 
 export const mailto = (subject) =>

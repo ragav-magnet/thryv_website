@@ -16,7 +16,8 @@ function validate(values) {
   if (!values.name.trim()) errors.name = 'Please tell us your name.';
   if (!values.email.trim()) errors.email = 'Please add an email so we can reply.';
   else if (!EMAIL_RE.test(values.email.trim())) errors.email = 'That email address doesn’t look quite right.';
-  if (values.phone.trim() && !PHONE_RE.test(values.phone.trim())) errors.phone = 'Please use digits, spaces, + or - only.';
+  if (!values.phone.trim()) errors.phone = 'Please add a phone number so we can reach you.';
+  else if (!PHONE_RE.test(values.phone.trim())) errors.phone = 'Please use digits, spaces, + or - only.';
   if (values.message.trim().length < 10) errors.message = 'A sentence or two is plenty — what are you trying to achieve?';
   return errors;
 }
@@ -26,7 +27,7 @@ function buildMailto(v) {
     `Name: ${v.name}`,
     `Email: ${v.email}`,
     v.company ? `Company: ${v.company}` : null,
-    v.phone ? `Phone: ${v.phone}` : null,
+    `Phone: ${v.phone}`,
     `Topic: ${v.interest}`,
     '',
     v.message,
@@ -131,7 +132,7 @@ export default function ContactForm() {
               <FormField label="Full name" name="name" required autoComplete="name" placeholder="Your name" value={values.name} onChange={onChange} onBlur={onBlur} error={err('name')} />
               <FormField label="Work email" name="email" type="email" required autoComplete="email" inputMode="email" placeholder="you@company.com" value={values.email} onChange={onChange} onBlur={onBlur} error={err('email')} />
               <FormField label="Company" name="company" autoComplete="organization" placeholder="Company name" value={values.company} onChange={onChange} onBlur={onBlur} />
-              <FormField label="Phone" name="phone" type="tel" autoComplete="tel" inputMode="tel" placeholder="+91 …" value={values.phone} onChange={onChange} onBlur={onBlur} error={err('phone')} />
+              <FormField label="Phone" name="phone" type="tel" required autoComplete="tel" inputMode="tel" placeholder="+91 …" value={values.phone} onChange={onChange} onBlur={onBlur} error={err('phone')} />
               <FormField label="What would you like to discuss?" name="interest" as="select" options={contact.interests} showOptional={false} value={values.interest} onChange={onChange} className="contact-form__full" />
               <FormField
                 label="Your message"

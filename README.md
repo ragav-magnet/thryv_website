@@ -19,7 +19,7 @@ Requires Node 18+.
 thryv-website/
 ├── index.html                  # HTML shell, meta tags, Inter font
 ├── public/favicon.png          # original favicon (extracted from the HTML)
-├── .env.example                # optional contact-form endpoint
+├── .env.example                # Resend + contact-form settings
 └── src/
     ├── main.jsx                # entry point
     ├── App.jsx                 # page composition
@@ -60,10 +60,11 @@ The animated components follow popular 21st.dev / Magic UI patterns — Blur Fad
 
 ## Contact form
 
-Fields: name*, work email*, company, phone, topic, message*. Includes inline validation, a spam honeypot and a success state.
+Fields: name*, work email*, company, phone*, topic, message*. Includes inline validation, a spam honeypot and a success state.
 
-- **Default:** on submit it opens the visitor's email app with a pre-filled message to `vikas@thryvpartners.in`.
-- **Direct submission:** copy `.env.example` to `.env` and set `VITE_CONTACT_ENDPOINT` to a form service URL that accepts JSON POST (e.g. Formspree, Getform, or your own API). Rebuild after changing it.
+- **Production:** the form posts to `api/contact.js`, a Vercel serverless function that emails `vikas@thryvpartners.in` through Resend, with the visitor's address as reply-to. Set `RESEND_API_KEY` in the Vercel project's environment variables and redeploy. `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` are optional overrides; the sender must be on a domain verified in Resend.
+- **Local dev:** `npm run dev` doesn't serve `api/`, so on submit the form opens the visitor's email app with a pre-filled message instead.
+- **Other endpoint:** set `VITE_CONTACT_ENDPOINT` to any URL that accepts JSON POST. Rebuild after changing it.
 
 ## Contact details
 
