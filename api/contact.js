@@ -2,7 +2,7 @@
 // RESEND_API_KEY must stay server-side, so never give it a VITE_ prefix.
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const PHONE_RE = /^[+()\d\s-]{7,20}$/;
-const DEFAULT_RECIPIENTS = 'vikas@thryvpartners.in, anujvaid@gmail.com, ragav.magnet@gmail.com';
+const DEFAULT_RECIPIENTS = 'vikas@thryvpartners.in, anujvaid@gmail.com';
 
 const line = (value, max) => (typeof value === 'string' ? value.replace(/\s+/g, ' ').trim().slice(0, max) : '');
 const block = (value, max) => (typeof value === 'string' ? value.trim().slice(0, max) : '');
