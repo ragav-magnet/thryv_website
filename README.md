@@ -62,7 +62,7 @@ The animated components follow popular 21st.dev / Magic UI patterns — Blur Fad
 
 Fields: name*, work email*, company, phone*, topic, message*. Includes inline validation, a spam honeypot and a success state.
 
-- **Production:** the form posts to `api/contact.js`, a Vercel serverless function that emails `vikas@thryvpartners.in` through Resend, with the visitor's address as reply-to. Set `RESEND_API_KEY` in the Vercel project's environment variables and redeploy. `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` are optional overrides; the sender must be on a domain verified in Resend.
+- **Production:** the form posts to `api/contact.js`, a Vercel serverless function that emails `vikas@thryvpartners.in`, `anujvaid@gmail.com` and `ragav.magnet@gmail.com` through Resend, with the visitor's address as reply-to. Set `RESEND_API_KEY` in the Vercel project's environment variables and redeploy. `CONTACT_TO_EMAIL` (comma-separated) and `CONTACT_FROM_EMAIL` are optional overrides; the sender must be on a domain verified in Resend.
 - **Local dev:** `npm run dev` doesn't serve `api/`, so on submit the form opens the visitor's email app with a pre-filled message instead.
 - **Other endpoint:** set `VITE_CONTACT_ENDPOINT` to any URL that accepts JSON POST. Rebuild after changing it.
 
